@@ -6,10 +6,10 @@ import {
   IonTitle,
   IonToolbar,
 } from "@ionic/react";
-import Container from "../components/Container";
-import "./Recent.css";
+import "./Home.css";
+import Posts from "../components/Posts";
 
-const Recent: React.FC = () => {
+const Home: React.FC = () => {
   return (
     <IonPage>
       <IonHeader>
@@ -23,10 +23,12 @@ const Recent: React.FC = () => {
             <IonTitle size="large">Recent posts</IonTitle>
           </IonToolbar>
         </IonHeader>
-        <Container name="Recent posts" />
+        <div className="container">
+          <Posts />
+        </div>
       </IonContent>
     </IonPage>
   );
 };
 
-export default Recent;
+export default Home;

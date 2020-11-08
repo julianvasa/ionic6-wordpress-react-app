@@ -11,7 +11,7 @@ import {
 } from "@ionic/react";
 import { IonReactRouter } from "@ionic/react-router";
 import { homeOutline, listOutline, searchOutline } from "ionicons/icons";
-import Recent from "./pages/Recent";
+import Home from "./pages/Home";
 import Categories from "./pages/Categories";
 import Search from "./pages/Search";
 
@@ -39,7 +39,7 @@ const App: React.FC = () => (
     <IonReactRouter>
       <IonTabs>
         <IonRouterOutlet>
-          <Route path="/home" component={Recent} exact={true} />
+          <Route path="/home" component={Home} exact={true} />
           <Route path="/categories" component={Categories} exact={true} />
           <Route path="/search" component={Search} />
           <Route path="/" render={() => <Redirect to="/home" />} exact={true} />

@@ -6,7 +6,6 @@ import {
   IonTitle,
   IonToolbar,
 } from "@ionic/react";
-import Container from "../components/Container";
 import "./Categories.css";
 
 const Categories: React.FC = () => {
@@ -23,7 +22,6 @@ const Categories: React.FC = () => {
             <IonTitle size="large">Main Categories</IonTitle>
           </IonToolbar>
         </IonHeader>
-        <Container name="Categories" />
       </IonContent>
     </IonPage>
   );

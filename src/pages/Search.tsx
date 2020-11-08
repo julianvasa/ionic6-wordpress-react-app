@@ -6,7 +6,6 @@ import {
   IonTitle,
   IonToolbar,
 } from "@ionic/react";
-import Container from "../components/Container";
 import "./Search.css";
 
 const Search: React.FC = () => {
@@ -23,7 +22,6 @@ const Search: React.FC = () => {
             <IonTitle size="large">Search posts 3</IonTitle>
           </IonToolbar>
         </IonHeader>
-        <Container name="Search" />
       </IonContent>
     </IonPage>
   );
