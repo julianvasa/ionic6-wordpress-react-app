@@ -1,13 +1,13 @@
-import React from "react";
+import React from "react"
 import {
   IonContent,
   IonHeader,
   IonPage,
   IonTitle,
   IonToolbar,
-} from "@ionic/react";
-import "./Home.css";
-import Posts from "../components/Posts";
+} from "@ionic/react"
+import "./Home.css"
+import Posts from "../components/Posts"
 
 const Home: React.FC = () => {
   return (
@@ -28,7 +28,7 @@ const Home: React.FC = () => {
         </div>
       </IonContent>
     </IonPage>
-  );
-};
+  )
+}
 
-export default Home;
+export default Home

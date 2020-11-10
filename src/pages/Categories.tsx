@@ -1,12 +1,12 @@
-import React from "react";
+import React from "react"
 import {
   IonContent,
   IonHeader,
   IonPage,
   IonTitle,
   IonToolbar,
-} from "@ionic/react";
-import "./Categories.css";
+} from "@ionic/react"
+import "./Categories.css"
 
 const Categories: React.FC = () => {
   return (
@@ -24,7 +24,7 @@ const Categories: React.FC = () => {
         </IonHeader>
       </IonContent>
     </IonPage>
-  );
-};
+  )
+}
 
-export default Categories;
+export default Categories

@@ -1,26 +1,25 @@
-import React, { useEffect, useState } from "react";
-import { IonCard, IonCardTitle, IonCardContent, IonGrid } from "@ionic/react";
-import { SanitizeHTML } from "./Sanitize";
-const marginTop = { marginTop: "30px" };
+import React, { useEffect, useState } from "react"
+import { IonCard, IonCardTitle, IonCardContent, IonGrid } from "@ionic/react"
+import { SanitizeHTML } from "./Sanitize"
 
 export default function Posts() {
-  const [posts, setPosts] = useState<any[]>([]);
+  const [posts, setPosts] = useState<any[]>([])
   useEffect(() => {
     async function loadPosts() {
       const response = await fetch(
         "https://blog.mozilla.org/wp-json/wp/v2/posts"
-      );
+      )
       if (!response.ok) {
         // Not a 200 response! return...
-        return;
+        return
       }
 
-      const posts = await response.json();
-      setPosts(posts);
+      const posts = await response.json()
+      setPosts(posts)
     }
 
-    loadPosts();
-  }, []);
+    loadPosts()
+  }, [])
   return (
     <IonGrid>
       {posts.map((post, index) => (
@@ -38,5 +37,5 @@ export default function Posts() {
         </IonGrid>
       ))}
     </IonGrid>
-  );
+  )
 }
