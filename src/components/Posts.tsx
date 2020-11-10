@@ -1,10 +1,7 @@
 import React, { useEffect, useState } from "react";
-import {
-  IonCard,
-  IonCardTitle,
-  IonCardContent,
-  IonGrid,
-} from "@ionic/react";
+import { IonCard, IonCardTitle, IonCardContent, IonGrid } from "@ionic/react";
+import { SanitizeHTML } from "./Sanitize";
+const marginTop = { marginTop: "30px" };
 
 export default function Posts() {
   const [posts, setPosts] = useState<any[]>([]);
@@ -14,7 +11,7 @@ export default function Posts() {
         "https://blog.mozilla.org/wp-json/wp/v2/posts"
       );
       if (!response.ok) {
-        // oops! something went wrong
+        // Not a 200 response! return...
         return;
       }
 
@@ -33,8 +30,8 @@ export default function Posts() {
               <IonCardTitle color="primary" mode="ios">
                 {post.title.rendered}
               </IonCardTitle>
-              <div
-                dangerouslySetInnerHTML={{ __html: post.content.rendered }}
+              <SanitizeHTML
+                html={post.content.rendered.substring(0, 400) + "..."}
               />
             </IonCardContent>
           </IonCard>
