@@ -2,9 +2,10 @@ import sanitize from 'sanitize-html'
 import React from 'react'
 
 const defaultOptions = {
-    allowedTags: ['b', 'i', 'em', 'strong', 'a', 'p', 'br'],
+    allowedTags: ['b', 'i', 'em', 'strong', 'a', 'p', 'br', 'img'],
     allowedAttributes: {
-        'a': ['href', 'target']
+        'a': ['href', 'target'],
+        'img': ['src']
     },
 }
 

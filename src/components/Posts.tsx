@@ -11,7 +11,7 @@ export default function Posts() {
   useEffect(() => {
     async function loadPosts(page: number) {
       const response = await fetch(
-        "https://blog.mozilla.org/wp-json/wp/v2/posts?page=" + page
+        "https://blog.playstation.com/wp-json/wp/v2/posts?page=" + page
       );
       if (!response.ok) {
         // Not a 200 response! return...
@@ -47,7 +47,7 @@ export default function Posts() {
                 {post.title.rendered}
               </IonCardTitle>
               <SanitizeHTML
-                html={post.content.rendered.substring(0, 400) + "..."}
+                html={post.content.rendered.substring(0, 2000) + "..."}
               />
             </IonCardContent>
           </IonCard>
