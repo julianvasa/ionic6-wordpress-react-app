@@ -11,7 +11,7 @@ import "./Categories.css"
 const Categories: React.FC = () => {
   return (
     <IonPage>
-      <IonHeader>
+      <IonHeader translucent={true} mode="ios">
         <IonToolbar>
           <IonTitle>Categories</IonTitle>
         </IonToolbar>
