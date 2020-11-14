@@ -2,7 +2,7 @@ import React from "react";
 import { IonCard, IonCardTitle, IonCardContent, IonGrid } from "@ionic/react";
 import { SanitizeHTML } from "../Sanitize";
 import { NextButtonContainer } from "./NextButtonContainer";
-import Thumbnail from "./ThumbnailContainer";
+import Thumbnail from "./Thumbnail";
 
 export const Posts = (props: {
   listOfPosts: any;

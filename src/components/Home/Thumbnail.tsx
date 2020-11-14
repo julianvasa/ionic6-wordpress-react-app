@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 
 export default function Thumbnail(img: any) {
-  const [thumbnail, setThumbnail] = useState<any>();
+  const [thumbnail, setThumbnail] = useState<any>({});
 
   useEffect(() => {
     async function loadThumbnail() {
@@ -15,11 +15,11 @@ export default function Thumbnail(img: any) {
       // Get the
       const media = await response.json();
       // Modify state variable posts
-      setThumbnail(media.media_details.sizes.medium.source_url);
+      setThumbnail(media.media_details.sizes.medium);
     }
     // call loadPosts when component PostsContainer renders
     loadThumbnail();
   }, [img]);
 
-  return <img src={thumbnail} />;
+  return <img src={thumbnail.source_url} alt={thumbnail.file} />;
 }
