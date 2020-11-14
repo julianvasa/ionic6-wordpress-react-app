@@ -1,6 +1,6 @@
 import React from "react";
 import { IonCard, IonCardTitle, IonCardContent, IonGrid } from "@ionic/react";
-import { SanitizeHTML } from "./Sanitize";
+import { SanitizeHTML } from "../Sanitize";
 import { NextButtonContainer } from "./NextButtonContainer";
 
 export const Posts = (props: {listOfPosts:any, totPages: number, handleClickNextPage:any}) => {
