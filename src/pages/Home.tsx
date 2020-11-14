@@ -7,7 +7,7 @@ import {
   IonToolbar,
 } from "@ionic/react";
 import "./Home.css";
-import PostsContainer from "../components/PostsContainer";
+import PostsContainer from "../components/Home/PostsContainer";
 
 const Home: React.FC = () => {
   return (

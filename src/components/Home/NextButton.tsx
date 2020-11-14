@@ -1,8 +1,11 @@
 import React from "react";
 import { IonButton } from "@ionic/react";
 
-export const NextButton = (props: {page:number, totPages: number, nextPage:any}) => {
-
+export const NextButton = (props: {
+  page: number;
+  totPages: number;
+  nextPage: any;
+}) => {
   return (
     <p className="ion-padding-start ion-padding-end">
       <IonButton
@@ -15,4 +18,4 @@ export const NextButton = (props: {page:number, totPages: number, nextPage:any})
       </IonButton>
     </p>
   );
-}
+};

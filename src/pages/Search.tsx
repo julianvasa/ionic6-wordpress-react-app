@@ -1,12 +1,12 @@
-import React from "react"
+import React from "react";
 import {
   IonContent,
   IonHeader,
   IonPage,
   IonTitle,
   IonToolbar,
-} from "@ionic/react"
-import "./Search.css"
+} from "@ionic/react";
+import "./Search.css";
 
 const Search: React.FC = () => {
   return (
@@ -24,7 +24,7 @@ const Search: React.FC = () => {
         </IonHeader>
       </IonContent>
     </IonPage>
-  )
-}
+  );
+};
 
-export default Search
+export default Search;

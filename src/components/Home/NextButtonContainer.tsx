@@ -1,18 +1,21 @@
 import React, { useEffect, useState } from "react";
 import { NextButton } from "./NextButton";
 
-export function NextButtonContainer(props: { totPages: number; onChange: any }) {
+export function NextButtonContainer(props: {
+  totPages: number;
+  onChange: any;
+}) {
   const [page, setPage] = useState<number>(1);
   const [totPages, setTotPages] = useState<number>(1);
 
   useEffect(() => {
     // set totPages to the value of the Parent (Posts)
     setTotPages(props.totPages);
-  },[props.totPages]);
+  }, [props.totPages]);
 
   useEffect(() => {
     // Run once!
-      setPage(2);
+    setPage(2);
   }, []);
 
   function nextPage() {
@@ -28,8 +31,6 @@ export function NextButtonContainer(props: { totPages: number; onChange: any }) 
     // Here, we invoke the callback function provided by the Parent with the new page value
     props.onChange(page);
   }
- 
-  return (
-    <NextButton page={page} totPages = {totPages} nextPage={nextPage}/>
-  );
+
+  return <NextButton page={page} totPages={totPages} nextPage={nextPage} />;
 }

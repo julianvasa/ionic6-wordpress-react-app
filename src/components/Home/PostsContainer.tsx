@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import {Posts} from "./Posts";
+import { Posts } from "./Posts";
 
 export default function PostsContainer() {
   const [posts, setPosts] = useState<any[]>([]);
@@ -33,9 +33,12 @@ export default function PostsContainer() {
   function handleClickNextPage(newPage: number) {
     setPage(newPage);
   }
-  
 
   return (
-    <Posts listOfPosts={posts} totPages = {totPages} handleClickNextPage={handleClickNextPage}/>
+    <Posts
+      listOfPosts={posts}
+      totPages={totPages}
+      handleClickNextPage={handleClickNextPage}
+    />
   );
 }
