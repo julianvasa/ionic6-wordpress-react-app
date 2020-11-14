@@ -7,7 +7,7 @@ import {
   IonToolbar,
 } from "@ionic/react";
 import "./Home.css";
-import Posts from "../components/Posts";
+import PostsContainer from "../components/PostsContainer";
 
 const Home: React.FC = () => {
   return (
@@ -24,7 +24,7 @@ const Home: React.FC = () => {
           </IonToolbar>
         </IonHeader>
         <div className="container">
-          <Posts />
+          <PostsContainer />
         </div>
       </IonContent>
     </IonPage>
