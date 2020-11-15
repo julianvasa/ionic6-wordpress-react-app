@@ -1,0 +1,10 @@
+.ion-row-class{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+}
+
+.ion-grid-class{
+    height: 100%;
+}

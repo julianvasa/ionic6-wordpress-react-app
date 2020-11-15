@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import { Posts } from "./Posts";
+import { Posts } from "../Home/Posts";
 import {
   IonContent,
   IonHeader,
@@ -10,7 +10,7 @@ import {
 } from "@ionic/react";
 
 export default function PostsContainer() {
-  let { categoryid } = useParams<any>();
+  let { searchStr } = useParams<any>();
   const [posts, setPosts] = useState<any[]>([]);
   const [page, setPage] = useState<number>(1);
   const [totPages, setTotPages] = useState<number>(1);
@@ -20,11 +20,11 @@ export default function PostsContainer() {
   useEffect(() => {
     async function loadPosts() {
       var url = baseUrl + "/posts?status=publish&page=" + page;
-      if (categoryid !== undefined) {
-        url = url + "&categories=" + categoryid;
-        getCategoryName(categoryid);
-      }
 
+      if(searchStr !== undefined && searchStr !== ""){
+        url = url + "&search=" + searchStr; 
+        setTitle(searchStr);
+      }
       const response = await fetch(url);
       if (!response.ok) {
         // Not a 200 response! return...
@@ -41,7 +41,7 @@ export default function PostsContainer() {
     }
     // call loadPosts when component PostsContainer renders
     loadPosts();
-  }, [page, categoryid]);
+  }, [page, searchStr]);
 
   // Update page with the value of the page of the NextButton
   // this will also update trigger the useEffect which will render 10 more posts
@@ -66,7 +66,7 @@ export default function PostsContainer() {
     <IonPage>
       <IonHeader translucent={true} >
         <IonToolbar>
-          <IonTitle>{title}</IonTitle>
+          <IonTitle>Results for: {title}</IonTitle>
         </IonToolbar>
       </IonHeader>
       <IonContent>

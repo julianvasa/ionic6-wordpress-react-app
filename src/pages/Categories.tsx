@@ -18,11 +18,6 @@ const Categories: React.FC = () => {
         </IonToolbar>
       </IonHeader>
       <IonContent>
-        <IonHeader collapse="condense">
-          <IonToolbar>
-            <IonTitle size="large">Categories</IonTitle>
-          </IonToolbar>
-        </IonHeader>
         <CategoriesContainer />
       </IonContent>
     </IonPage>
