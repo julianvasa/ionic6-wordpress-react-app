@@ -49,19 +49,6 @@ export default function PostsContainer() {
     setPage(newPage);
   }
 
-  async function getCategoryName(id: number) {
-    var url = baseUrl + "/categories/" + id;
-    
-    const response = await fetch(url);
-    if (!response.ok) {
-      // Not a 200 response! return...
-      return;
-    }
-    // Get the info of the current category
-    const category = await response.json();
-    // Set current category name
-    setTitle(category.name);
-  }
   return (
     <IonPage>
       <IonHeader translucent={true} >
