@@ -5,6 +5,7 @@ import {
   IonCardContent,
   IonGrid,
   IonCardHeader,
+  IonDatetime,
 } from "@ionic/react";
 import { SanitizeHTML } from "../Sanitize";
 import { NextButtonContainer } from "./NextButtonContainer";
@@ -24,16 +25,21 @@ export const Posts = (props: {
             excerpt: { rendered: string };
             featured_media: any;
             id: number;
+            date: any;
           },
           index: string | number | null | undefined
         ) => (
           <IonGrid key={index}>
-            <IonCard  href={"/post/"+(post.id)}>
+            <IonCard href={"/post/" + post.id}>
               <Thumbnail mediaId={post.featured_media} />
               <IonCardHeader>
                 <IonCardTitle>
                   {post.title.rendered.replace("&#8217;", "'")}
                 </IonCardTitle>
+                  <IonDatetime
+                    displayFormat="MMM DD, YYYY HH:mm"
+                    value={post.date}
+                  ></IonDatetime>
               </IonCardHeader>
               <IonCardContent class="ion-text-start">
                 <SanitizeHTML
