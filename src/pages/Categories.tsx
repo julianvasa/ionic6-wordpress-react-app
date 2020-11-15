@@ -7,6 +7,7 @@ import {
   IonToolbar,
 } from "@ionic/react";
 import "./Categories.css";
+import CategoriesContainer from "../components/Categories/CategoriesContainer";
 
 const Categories: React.FC = () => {
   return (
@@ -16,12 +17,13 @@ const Categories: React.FC = () => {
           <IonTitle>Categories</IonTitle>
         </IonToolbar>
       </IonHeader>
-      <IonContent fullscreen>
+      <IonContent>
         <IonHeader collapse="condense">
           <IonToolbar>
-            <IonTitle size="large">Main Categories</IonTitle>
+            <IonTitle size="large">Categories</IonTitle>
           </IonToolbar>
         </IonHeader>
+        <CategoriesContainer />
       </IonContent>
     </IonPage>
   );

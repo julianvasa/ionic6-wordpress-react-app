@@ -1,15 +1,18 @@
 import React, { useEffect, useState } from "react";
+import { useParams } from "react-router-dom";
 import { Posts } from "./Posts";
 
 export default function PostsContainer() {
+  let { categoryid } = useParams<any>();
   const [posts, setPosts] = useState<any[]>([]);
   const [page, setPage] = useState<number>(1);
   const [totPages, setTotPages] = useState<number>(1);
-
+  const baseUrl = "https://blog.playstation.com/wp-json/wp/v2";
+  
   useEffect(() => {
     async function loadPosts(page: number) {
       const response = await fetch(
-        "https://blog.playstation.com/wp-json/wp/v2/posts?page=" + page
+        baseUrl + "/posts?page=" + page + "&categories=" + categoryid
       );
       if (!response.ok) {
         // Not a 200 response! return...
@@ -26,7 +29,7 @@ export default function PostsContainer() {
     }
     // call loadPosts when component PostsContainer renders
     loadPosts(page);
-  }, [page]);
+  }, [page, categoryid]);
 
   // Update page with the value of the page of the NextButton
   // this will also update trigger the useEffect which will render 10 more posts
