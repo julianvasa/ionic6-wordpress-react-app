@@ -8,4 +8,4 @@ https://i5t7ui83wj.appflowapp.com/home
 
 Some screenshots :) 
 
-![home](home.png)
+![home](home.png) ![categories](categories.png)

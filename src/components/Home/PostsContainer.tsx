@@ -1,19 +1,31 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { Posts } from "./Posts";
+import {
+  IonContent,
+  IonHeader,
+  IonPage,
+  IonTitle,
+  IonToolbar,
+} from "@ionic/react";
 
 export default function PostsContainer() {
   let { categoryid } = useParams<any>();
   const [posts, setPosts] = useState<any[]>([]);
   const [page, setPage] = useState<number>(1);
   const [totPages, setTotPages] = useState<number>(1);
+  const [categoryName, setCategoryName] = useState<string>("Recent posts");
+
   const baseUrl = "https://blog.playstation.com/wp-json/wp/v2";
-  
+
   useEffect(() => {
     async function loadPosts(page: number) {
-      const response = await fetch(
-        baseUrl + "/posts?page=" + page + "&categories=" + categoryid
-      );
+      var url = baseUrl + "/posts?page=" + page;
+      if (categoryid !== undefined) {
+        url = url + "&categories=" + categoryid;
+        getCategoryName(categoryid);
+      }
+      const response = await fetch(url);
       if (!response.ok) {
         // Not a 200 response! return...
         return;
@@ -37,11 +49,39 @@ export default function PostsContainer() {
     setPage(newPage);
   }
 
+  async function getCategoryName(id: number) {
+    var url = baseUrl + "/categories/" + id;
+    
+    const response = await fetch(url);
+    if (!response.ok) {
+      // Not a 200 response! return...
+      return;
+    }
+    // Get the info of the current category
+    const category = await response.json();
+    // Set current category name
+    setCategoryName(category.name);
+  }
+
   return (
-    <Posts
-      listOfPosts={posts}
-      totPages={totPages}
-      handleClickNextPage={handleClickNextPage}
-    />
+    <IonPage>
+      <IonHeader translucent={true} mode="ios">
+        <IonToolbar>
+          <IonTitle>{categoryName}</IonTitle>
+        </IonToolbar>
+      </IonHeader>
+      <IonContent>
+        <IonHeader collapse="condense">
+          <IonToolbar>
+            <IonTitle size="large">{categoryName}</IonTitle>
+          </IonToolbar>
+        </IonHeader>
+        <Posts
+          listOfPosts={posts}
+          totPages={totPages}
+          handleClickNextPage={handleClickNextPage}
+        />
+      </IonContent>
+    </IonPage>
   );
 }

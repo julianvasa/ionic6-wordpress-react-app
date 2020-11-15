@@ -1,9 +1,9 @@
 {
-  "short_name": "Ionic App",
-  "name": "My Ionic App",
+  "short_name": "Wordpress Ionic 6 React",
+  "name": "Wordpress Ionic 6 React",
   "icons": [
     {
-      "src": "assets/icon/favicon.png",
+      "src": "assets/icon/favicon-96x96.png",
       "sizes": "64x64 32x32 24x24 16x16",
       "type": "image/x-icon"
     },

@@ -1,6 +1,6 @@
 {
   "appId": "io.ionic.starter",
-  "appName": "Julius",
+  "appName": "wordpress-ionic6-react",
   "bundledWebRuntime": false,
   "npmClient": "npm",
   "webDir": "build",
