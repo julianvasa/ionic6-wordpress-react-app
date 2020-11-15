@@ -15,10 +15,12 @@ export default function Thumbnail(img: any) {
       // Get the
       const media = await response.json();
       // Modify state variable posts
-      setThumbnail(media.media_details.sizes.medium);
+      setThumbnail(media.media_details.sizes.medium_large);
     }
     // call loadPosts when component PostsContainer renders
-    loadThumbnail();
+    if (img.mediaId !== undefined) {
+      loadThumbnail();
+    }
   }, [img]);
 
   return <img src={thumbnail.source_url} alt={thumbnail.file} />;

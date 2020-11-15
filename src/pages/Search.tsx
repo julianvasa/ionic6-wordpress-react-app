@@ -11,7 +11,7 @@ import "./Search.css";
 const Search: React.FC = () => {
   return (
     <IonPage>
-      <IonHeader translucent={true} mode="ios">
+      <IonHeader translucent={true} >
         <IonToolbar>
           <IonTitle>Search</IonTitle>
         </IonToolbar>

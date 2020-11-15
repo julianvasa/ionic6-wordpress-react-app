@@ -12,7 +12,7 @@ import CategoriesContainer from "../components/Categories/CategoriesContainer";
 const Categories: React.FC = () => {
   return (
     <IonPage>
-      <IonHeader translucent={true} mode="ios">
+      <IonHeader translucent={true} >
         <IonToolbar>
           <IonTitle>Categories</IonTitle>
         </IonToolbar>

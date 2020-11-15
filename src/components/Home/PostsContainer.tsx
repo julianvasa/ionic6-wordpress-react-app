@@ -65,7 +65,7 @@ export default function PostsContainer() {
 
   return (
     <IonPage>
-      <IonHeader translucent={true} mode="ios">
+      <IonHeader translucent={true} >
         <IonToolbar>
           <IonTitle>{categoryName}</IonTitle>
         </IonToolbar>

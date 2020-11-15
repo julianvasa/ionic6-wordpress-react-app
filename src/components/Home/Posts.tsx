@@ -1,8 +1,14 @@
 import React from "react";
-import { IonCard, IonCardTitle, IonCardContent, IonGrid } from "@ionic/react";
+import {
+  IonCard,
+  IonCardTitle,
+  IonCardContent,
+  IonGrid,
+  IonCardHeader,
+} from "@ionic/react";
 import { SanitizeHTML } from "../Sanitize";
 import { NextButtonContainer } from "./NextButtonContainer";
-import Thumbnail from "./Thumbnail";
+import Thumbnail from "../Thumbnail";
 
 export const Posts = (props: {
   listOfPosts: any;
@@ -16,17 +22,20 @@ export const Posts = (props: {
           post: {
             title: { rendered: string };
             excerpt: { rendered: string };
-            featured_media:  any;
+            featured_media: any;
+            id: number;
           },
           index: string | number | null | undefined
         ) => (
           <IonGrid key={index}>
-            <IonCard mode="ios">
-              <IonCardContent class="ion-text-start">
-                <IonCardTitle color="primary" mode="ios">
+            <IonCard  href={"/post/"+(post.id)}>
+              <Thumbnail mediaId={post.featured_media} />
+              <IonCardHeader>
+                <IonCardTitle>
                   {post.title.rendered.replace("&#8217;", "'")}
                 </IonCardTitle>
-                <Thumbnail mediaId ={post.featured_media} />
+              </IonCardHeader>
+              <IonCardContent class="ion-text-start">
                 <SanitizeHTML
                   html={post.excerpt.rendered.replace("&#8217;", "'")}
                 />
@@ -35,7 +44,7 @@ export const Posts = (props: {
           </IonGrid>
         )
       )}
-      <NextButtonContainer 
+      <NextButtonContainer
         totPages={props.totPages}
         onChange={props.handleClickNextPage}
       />
