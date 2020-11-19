@@ -34,7 +34,7 @@ import "@ionic/react/css/display.css"
 /* Theme variables */
 import "./theme/variables.css"
 import PostContainer from "./components/Post/PostContainer"
-import SearchContainer from "./components/Search/SearchContainer"
+import SearchResults from "./components/Search/Search"
 
 const App: React.FC = () => (
   <IonApp>
@@ -46,7 +46,7 @@ const App: React.FC = () => (
           <Route path="/categories" component={Categories} exact={true} />
           <Route path="/search" component={Search} />
           <Route path="/post/:postid" component={PostContainer} exact={true} />
-          <Route path="/search/:searchStr" component={SearchContainer} exact={true} />
+          <Route path="/search/:searchStr" component={SearchResults} exact={true} />
           <Route path="/" render={() => <Redirect to="/home" />} exact={true} />
         </IonRouterOutlet>
         <IonTabBar slot="bottom">

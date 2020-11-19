@@ -9,16 +9,16 @@ import {
   IonToolbar,
 } from "@ionic/react";
 
-export default function PostsContainer() {
+export default function SearchResults() {
   let { searchStr } = useParams<any>();
   const [posts, setPosts] = useState<any[]>([]);
   const [page, setPage] = useState<number>(1);
   const [totPages, setTotPages] = useState<number>(1);
-  const [title, setTitle] = useState<string>("Recent posts");
+  const [title, setTitle] = useState<string>("");
   const baseUrl = "https://blog.playstation.com/wp-json/wp/v2";
 
   useEffect(() => {
-    async function loadPosts() {
+    async function loadSearchResults() {
       var url = baseUrl + "/posts?status=publish&page=" + page;
 
       if(searchStr !== undefined && searchStr !== ""){
@@ -40,7 +40,7 @@ export default function PostsContainer() {
       setTotPages(Number(totalPages));
     }
     // call loadPosts when component PostsContainer renders
-    loadPosts();
+    loadSearchResults();
   }, [page, searchStr]);
 
   // Update page with the value of the page of the NextButton
