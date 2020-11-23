@@ -12,4 +12,7 @@ Share this library with friends on Twitter and everywhere else you can. 🙏
 
 Some screenshots :) 
 
+My first story on Medium: 
+https://medium.com/@vasa.julian/creating-a-wordpress-app-based-on-ionic-6-react-ac753ca087c9
+
 ![recent](recent.png?) ![categories](categories.png)
